@@ -29,24 +29,11 @@ export class Account {
   })
   createTime: Date | null;
 
-  @Column('timestamp', {
-    name: 'update_time',
-    nullable: true,
-    default: () => Date.now(),
-  })
-  updateTime: Date | null;
-
   @Column('smallint', { name: 'ban', default: () => "'0'" })
   ban: number;
 
   @Column('int', { name: 'point_post', default: () => "'0'" })
   pointPost: number;
-
-  @Column('int', { name: 'last_post', default: () => "'0'" })
-  lastPost: number;
-
-  @Column('int', { name: 'role', default: () => "'-1'" })
-  role: number;
 
   @Column('tinyint', { name: 'is_admin', width: 1, default: () => "'0'" })
   isAdmin: boolean;

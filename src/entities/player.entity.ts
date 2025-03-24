@@ -37,9 +37,6 @@ export class Player {
   @Column('int', { name: 'clan_id_sv1', default: () => "'-1'" })
   clanIdSv1: number;
 
-  @Column('int', { name: 'clan_id_sv2', default: () => "'-1'" })
-  clanIdSv2: number;
-
   @Column('text', { name: 'data_inventory' })
   dataInventory: string;
 
