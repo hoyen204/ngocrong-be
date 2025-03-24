@@ -1,25 +1,18 @@
 version: '3.3'
 services:
-  dragonboy-be:
-    image: 'dakmil204/dragonboy-be:v1.0.0'
-    container_name: dragonboy-be
+  dragonball_be:
+    image: 'dakmil204/dragonball_be:v1.0.0'
+    container_name: dragonball_be
     restart: unless-stopped
     build: .
     volumes:
       - ./.env:/home/src/.env
       - ./.env.dev:/home/src/.env.dev
     ports:
-      - '1313:3000'
+      - '9000:3000'
     networks:
-      - dragonboy_network
       - mysql_network
-
-volumes:
-  strapi:
-    driver: local
-
+      
 networks:
-  dragonboy_network:
-    driver: bridge
   mysql_network:
     external: true
