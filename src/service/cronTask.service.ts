@@ -15,7 +15,7 @@ export class CronTaskService {
   ) {}
   private readonly logger = new Logger(CronTaskService.name);
 
-  @Cron(CronExpression.EVERY_MINUTE)
+  // @Cron(CronExpression.EVERY_MINUTE)
   async handleTransactionHistory() {
     const phoneNumber = '0823222627';
     try {
@@ -29,7 +29,7 @@ export class CronTaskService {
     }
   }
 
-  @Cron(CronExpression.EVERY_30_MINUTES)
+  // @Cron(CronExpression.EVERY_30_MINUTES)
   async handleRefreshToken() {
     const phoneNumber = '0823222627';
     try {
@@ -58,7 +58,7 @@ export class CronTaskService {
   //   }
   // }
 
-  @Cron(CronExpression.EVERY_10_SECONDS)
+  // @Cron(CronExpression.EVERY_10_SECONDS)
   async handleMomoPending() {
     let valueReceive = 0;
     const pendings = await this.rechargeService.findMomoPending();

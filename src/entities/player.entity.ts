@@ -91,8 +91,8 @@ export class Player {
   @Column('text', { name: 'skills_shortcut' })
   skillsShortcut: string;
 
-  @Column('text', { name: 'pet' })
-  pet: string;
+  @Column('text', { name: 'pet_info' })
+  petInfo: string;
 
   @Column('text', { name: 'data_black_ball' })
   dataBlackBall: string;
@@ -109,28 +109,8 @@ export class Player {
   @Column('int', { name: 'violate', default: () => "'0'" })
   violate: number;
 
-  @Column('int', { name: 'pointPvp', nullable: true, default: () => "'0'" })
-  pointPvp: number | null;
-
-  @Column('int', {
-    name: 'NguHanhSonPoint',
-    nullable: true,
-    default: () => "'0'",
-  })
-  nguHanhSonPoint: number | null;
-
-  @Column('text', { name: 'data_card' })
-  dataCard: string;
-
-  @Column('text', { name: 'bill_data' })
-  billData: string;
-
-  @Column('varchar', {
-    name: 'data_item_time_sieu_cap',
-    length: 255,
-    default: () => "'[0,0,0,0,0]'",
-  })
-  dataItemTimeSieuCap: string;
+  @Column('text', { name: 'collection_book' })
+  collectionBook: string;
 
   @OneToOne(() => Account, (account) => account.player, {
     onDelete: 'RESTRICT',

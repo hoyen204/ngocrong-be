@@ -17,17 +17,16 @@ import { BankModule } from './module/bank.module';
 import { MomoTransactionModule } from './module/momoTransaction.module';
 import { ScheduleModule } from '@nestjs/schedule';
 import { CronTaskModule } from './module/cronTask.module';
-
 @Module({
   imports: [
     ScheduleModule.forRoot(),
     ConfigModule.forRoot({
-      envFilePath: `.env.${process.env.NODE_ENV}`,
+      envFilePath: `.env.dev`,
     }),
     ThrottlerModule.forRoot([
       {
         name: 'short',
-        ttl: 1000,
+        ttl: 5000,
         limit: 2,
       },
       {
@@ -65,7 +64,7 @@ import { CronTaskModule } from './module/cronTask.module';
     MomoModule,
     BankModule,
     MomoTransactionModule,
-    CronTaskModule,
+    // CronTaskModule,
   ],
   controllers: [AppController],
   providers: [

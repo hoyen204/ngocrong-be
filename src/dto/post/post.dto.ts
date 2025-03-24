@@ -31,6 +31,10 @@ export class PostDto {
 
   @ApiProperty()
   @Expose()
+  isNotification: boolean;
+
+  @ApiProperty()
+  @Expose()
   createdAt: Date;
 
   @ApiProperty()

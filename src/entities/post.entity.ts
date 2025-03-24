@@ -28,7 +28,7 @@ export class Post {
   createdAt: Date;
 
   @Column('enum', {
-    name: 'STATUS',
+    name: 'status',
     enum: ['WAITING_FOR_APPROVAL', 'APPROVED', 'PROCESSED', 'LOCKED'],
     default: () => "'APPROVED'",
   })
